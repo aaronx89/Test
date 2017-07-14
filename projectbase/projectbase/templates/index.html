@@ -1,0 +1,61 @@
+{%load static%}
+<!DOCTYPE html>
+<html ng-app="todos">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Proyecto Base</title>
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static "bootstrap-3.3.7/css/bootstrap.css" %}" />
+    <link rel="stylesheet" href="{% static "css/custom.css" %}" />
+    
+</head>
+<body ng-controller="TodoController">
+    <div class="container fondo">
+        
+    </div> <!--./container-->
+    <div class="container fondotexto">
+    <br>
+        <div class="row">
+            <div class="titulo"><b>Título del Apartado</b></div><br>
+            <div class="textocontenido"> Primera parte de un texto manteniendo margenes y estilo de fuente del diseñador teniendo en cuenta que el texto es extenso</div><br>
+
+             <div class="textocontenido"></div><br>
+
+             <div class="textocontenido"></div><br>
+
+             <div class="textocontenido">
+            </div><br>
+
+             <div class="textocontenido"></div>
+        </div>
+        <br>
+        {% verbatim %}
+          
+        
+        <h4>{{todos.length}} remain</h4>
+
+        <ul>
+          <li ng-repeat="todo in filteredTodos">{{todo.phone}}</li>
+        </ul>
+
+        <div data-pagination="" data-num-pages="numPages()" 
+          data-current-page="currentPage" data-max-size="maxSize"  
+          data-boundary-links="true"></div>
+          {% endverbatim %}
+    </div>
+
+
+
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "bootstrap-3.3.7/js/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static 'js/angular.min.js' %}"></script>
+    <script src="{% static "js/ui-bootstrap-tpls-2.5.0.js" %}"></script>
+    <script type="text/javascript" src="{% static 'js/app-galeria.js' %}"></script>
+    
+</body>
+</html>
